@@ -1,5 +1,5 @@
 #name,maxSpeed,consumption,range,emptyAirlineWeight;name,maxSpeed,consumption,range;...
-#separation between categories of plane - "@"
+#separation between categories of plane - last digit.
 
 AirBus-A220,870,2600,4000,35221,110,0;
 Boeing 737,795,2600,2900,26581,149,0;
