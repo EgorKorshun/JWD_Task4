@@ -38,19 +38,18 @@ public class Runner {
         int holdingCapacity=0;
         for (int i = 0; i < planes.length; i++) {
             int emptyAircraftWeight =planes[i].getEmptyAircraftWeight();
-           if(planes[i].getClass().getSimpleName()== String.valueOf(PassengerPlane.class)){
+            if(planes[i] instanceof PassengerPlane){
                PassengerPlane passengerPlane = (PassengerPlane) planes[i];
                int capacity = passengerPlane.getCapacity();
                holdingCapacity+=passengerPlaneService.holdingCapacity(capacity);
                summaryAircraftWeight+=passengerPlaneService.liftingCapacity(capacity,emptyAircraftWeight);
            }
-           else if(planes[i].getClass().getSimpleName()==String.valueOf(CargoAirplane.class)){
+           else{
                CargoAirplane cargoPlane = (CargoAirplane) planes[i];
                int maximumCargoWeight=cargoPlane.getMaximumCargoWeight();
                summaryAircraftWeight+=cargoPlaneService.liftingCapacity(maximumCargoWeight,emptyAircraftWeight);
                holdingCapacity+=cargoPlaneService.holdingCapacity(Plane.getCapacityOfCrew());
            }
-
         }
         System.out.println(airline);
         System.out.println("\ntotal weight of aircraft without load "+summaryAircraftWeight+"\nhilding capacity - "+holdingCapacity);
