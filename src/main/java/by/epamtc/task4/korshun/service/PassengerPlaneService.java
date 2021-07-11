@@ -9,6 +9,9 @@ public class PassengerPlaneService extends PlaneService  implements Carrying ,Ho
 
     @Override
     public int liftingCapacity(int capacity, int emptyAircraftWeight){
+        if(capacity<0||emptyAircraftWeight<0){
+            return 0;
+        }
         return capacity*WEIGHT_OF_ONE_PERSON+emptyAircraftWeight;
     }
 

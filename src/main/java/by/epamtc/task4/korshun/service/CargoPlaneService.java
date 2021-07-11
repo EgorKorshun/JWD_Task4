@@ -8,6 +8,9 @@ public class CargoPlaneService extends  PlaneService implements Carrying, Holdin
 
     @Override
     public int liftingCapacity(int maximumCargoWeight, int emptyAircraftWeight){
+        if(maximumCargoWeight<0||emptyAircraftWeight<0){
+            return 0;
+        }
         return  maximumCargoWeight+emptyAircraftWeight;
     }
 

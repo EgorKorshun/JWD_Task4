@@ -18,7 +18,9 @@ public class Airline implements Serializable {
     }
 
     public void setPlanes(NavigableSet<Plane> planes) {
-        this.planes = planes;
+        if(planes!=null) {
+            this.planes = planes;
+        }
     }
 
     public Airline(NavigableSet<Plane> planes) {
@@ -42,6 +44,7 @@ public class Airline implements Serializable {
         return  flag;
     }
     public  void  removePlane(Plane plane){
+        if(plane!=null)
         planes.remove(plane);
     }
 
